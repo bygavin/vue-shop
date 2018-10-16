@@ -7,6 +7,7 @@
     <ul>
       <li v-for="item in itemList">{{ item.goodsName}} / {{ item.marketPrice}}</li>
     </ul>
+    <router-link :to="{path:'/show',query:{ id:num}}" class="around">查看详情</router-link>
   </div>
 </template>
 
@@ -16,13 +17,13 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      itemList:[]
+      itemList:[],
+      num:10
     }
   },
   mounted(){
      console.log('start');
-     this.initData();
-     this.getCategory();
+
   },
   methods:{
      initData:function(){
